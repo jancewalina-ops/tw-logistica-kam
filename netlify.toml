@@ -2,6 +2,5 @@
   functions = "netlify/functions"
   publish = "."
 
-[build.environment]
+[context.production.environment]
   NODE_VERSION = "18"
-  AWS_LAMBDA_JS_RUNTIME = "nodejs18.x"
