@@ -4,10 +4,4 @@
 
 [build.environment]
   NODE_VERSION = "18"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Headers = "Content-Type"
-    Access-Control-Allow-Methods = "POST, GET, OPTIONS"
+  AWS_LAMBDA_JS_RUNTIME = "nodejs18.x"
