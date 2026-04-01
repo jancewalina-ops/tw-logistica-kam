@@ -426,7 +426,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-async function analyseCV() {
+window.analyseCV = async function analyseCV() {
   var cvText = document.getElementById("cvText").value.trim();
   var nameInput = document.getElementById("candidateName").value.trim();
   if (!cvText) { alert("Por favor ingresa el texto del CV."); return; }
