@@ -445,7 +445,7 @@ async function analyseCV() {
   document.getElementById("streamBox").textContent = "Analizando CV con logica de TW Logistica...";
   try {
     var userMsg = (nameInput ? "Nombre: " + nameInput + "\n\n" : "") + "CV:\n\n" + cvText;
-    var resp = await fetch("/.netlify/functions/claude", {
+    var resp = await fetch("https://tw-logistica-kam.onrender.com", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, system: MASTER_PROMPT, messages: [{ role: "user", content: userMsg }] })
