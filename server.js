@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': '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',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
         'anthropic-version': '2023-06-01'
       }
     };
