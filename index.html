@@ -448,8 +448,7 @@ window.analyseCV = async function analyseCV() {
     var resp = await fetch("https://tw-logistica-kam.onrender.com", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, system: MASTER_PROMPT, messages: [{ role: "user", content: userMsg }] })
-    });
+     body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, system: MASTER_PROMPT, messages: [{ role: "user", content: userMsg.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '') }] }),
     var data = await resp.json();
     var raw = data.content.map(function(b){ return b.text || ""; }).join("").trim();
     if (raw.charAt(0) === "`") raw = raw.replace(/```[a-z]*\n?/gi, "").replace(/```/g, "").trim();
